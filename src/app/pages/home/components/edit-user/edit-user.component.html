@@ -1,0 +1,107 @@
+<div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+    <div class="card" style="border-radius: 15px">
+      <div class="card-body p-5">
+        <h2 class="text-uppercase text-center mb-5">Editar usuário</h2>
+
+        <form [formGroup]="editUserForm">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example1cg">Nome</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control form-control-lg"
+            />
+
+            <!-- ERROR -->
+            <div
+              *ngIf="
+                editUserForm.get('name')?.invalid &&
+                (editUserForm.get('name')?.dirty ||
+                  editUserForm.get('name')?.touched)
+              "
+            >
+              <div class="text-danger">Nome é obrigatório</div>
+            </div>
+            <!-- ERROR -->
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3cg">Email</label>
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control form-control-lg"
+            />
+
+            <!-- ERROR -->
+            <div
+              *ngIf="
+                editUserForm.get('email')?.invalid &&
+                (editUserForm.get('email')?.dirty ||
+                  editUserForm.get('email')?.touched)
+              "
+            >
+              <div class="text-danger">Por favor insira um e-mail válido</div>
+            </div>
+            <!-- ERROR -->
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example4cg">Função</label>
+            <select formControlName="role" class="form-select form-select-lg" required>
+              <option value="FE">Engenheiro de FE</option>
+              <option value="BE">Engenheiro de BE</option>
+              <option value="AN">Analista de dados</option>
+              <option value="LD">Líder Técnico</option>
+            </select>
+
+            <!-- ERROR -->
+            <div
+              *ngIf="
+                editUserForm.get('role')?.invalid &&
+                (editUserForm.get('role')?.dirty ||
+                  editUserForm.get('role')?.touched)
+              "
+            >
+              <div class="text-danger">Função é obrigatória</div>
+            </div>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example4cg">Senha</label>
+            <input
+              type="text"
+              formControlName="password"
+              class="form-control form-control-lg"
+            />
+
+            <!-- ERROR -->
+            <div
+              *ngIf="
+                editUserForm.get('password')?.invalid &&
+                (editUserForm.get('epasswordmail')?.dirty ||
+                  editUserForm.get('password')?.touched)
+              "
+            >
+              <div class="text-danger">
+                Por favor insira uma senha entre 6 e 20 caracteres
+              </div>
+            </div>
+            <!-- ERROR -->
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button
+              (click)="onSubmit()"
+              [disabled]="!editUserForm.valid"
+              class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+            >
+              Editar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
