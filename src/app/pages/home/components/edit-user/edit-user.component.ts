@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 const userMock = {
-  name: 'Natale Tagliaferro Neto',
-  email: 'natalefenix@gmail.com',
+  name: 'John Mendonsa',
+  email: 'jmendonsa@email.com',
   password: '123456',
   role: 'LD'
 }
