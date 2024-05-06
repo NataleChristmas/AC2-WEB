@@ -9,14 +9,24 @@ interface User {
 
 const usersMock = [
   {
-    name: 'John Montana',
-    email: 'john123@gmail.com',
+    name: 'Maicon Montana',
+    email: 'Maikin@gmail.com',
     role: 'Engenheiro de BE',
   },
   {
-    name: 'Maria',
-    email: 'maria@email.com',
+    name: 'Márcia Strada',
+    email: 'marcinh@email.com',
     role: 'Analista de dados',
+  },
+  {
+    name: 'Jack Renegade',
+    email: 'jack300@gmail.com',
+    role: 'Analista de dados',
+  },
+  {
+    name: 'João Uno',
+    email: 'joaoUno@gmail.com',
+    role: 'Líder Técnico',
   }
 ]
 
